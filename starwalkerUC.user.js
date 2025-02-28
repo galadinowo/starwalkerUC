@@ -10,6 +10,7 @@
 // ==/UserScript==
 
 const checkInit = setInterval(() => {
+    if (window.location.pathname !== '/CardSkinsShop') { clearInterval(checkInit); return; }
     if (typeof initCardSkinsShop === 'function'){
         clearInterval(checkInit);
         $.ajax({
@@ -130,6 +131,7 @@ if (document.readyState !== 'loading') {
 }
 
 function appendLegacyFilter() {
+    if (window.location.pathname !== '/CardSkinsShop') { return; }
     var newLabel = document.createElement('label');
 
     var inputElement = document.createElement('input');
