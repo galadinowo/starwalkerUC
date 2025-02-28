@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         starwalkerUC
 // @namespace    https://undercards.net
-// @version      1.1.0
+// @version      1.1.2
 // @description  he sees u
 // @author       galadino
 // @match        https://*.undercards.net/*
@@ -13,6 +13,7 @@ const checkInit = setInterval(() => {
     if (window.location.pathname !== '/CardSkinsShop') { clearInterval(checkInit); return; }
     if (typeof initCardSkinsShop === 'function'){
         clearInterval(checkInit);
+        function initOverride () {
         $.ajax({
         url: url + "?action=shop",
         type: "GET",
@@ -42,7 +43,7 @@ const checkInit = setInterval(() => {
             showPage(0);
         }
     });
-        }
+        }} initOverride(); initCardSkinsShop = initOverride;
 });
 
 const checkIsRemoved = setInterval(() => {
