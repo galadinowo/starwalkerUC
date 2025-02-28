@@ -142,7 +142,7 @@ function appendLegacyFilter() {
 
     var spanElement = document.createElement('span');
     spanElement.className = 'glyphicon glyphicon-star yellow';
-    spanElement.style.padding = '5px';
+    spanElement.style.paddingLeft = '7px';
     newLabel.appendChild(inputElement);
     newLabel.appendChild(spanElement);
 
